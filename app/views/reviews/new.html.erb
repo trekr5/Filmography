@@ -1,0 +1,21 @@
+
+<!-- #<%= form_tag("/search", method: "get") do %>
+  #<%= label_tag(:q, "Search for:") %>
+  #<%= text_field_tag(:q) %>
+  #<%= submit_tag("Search") %>
+#<% end %> -->
+
+
+<%= form_for @review do |f| %>
+  <%= f.label :username %><br />
+  <%= f.text_field :username %><br /><br />
+  <%= f.label :name_of_film %><br />
+  <%= f.text_field :name_of_film %><br />
+  <%= f.label :description %><br />
+  <%= f.text_field :description %><br />
+  <%= f.label :comment %><br />
+   <%= f.text_area :comment %><br />
+  <%= f.select :ratings, [['Poor', 1],['Not So Poor', 2],['Average', 3],['Good', 4],['Outstanding', 5]] %>
+  <%= f.submit "Create" %>
+<% end %>
+
