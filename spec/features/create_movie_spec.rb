@@ -7,8 +7,8 @@ feature "Movie" do
   	  brave_film = FactoryGirl.create(:movie, title: "Brave")
   	  up_film = FactoryGirl.create(:movie, title: "UP")
       visit '/movies'
-      page.should have_content brave_review.name_of_film
-      page.should have_content up_review.name_of_film
+      page.should have_content brave_movie.title
+      page.should have_content up_movie.title
       
 
   end 
