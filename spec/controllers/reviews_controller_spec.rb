@@ -17,12 +17,12 @@ describe ReviewsController do
       it "saves a record" do
 
         expect {
-         post :create, review: {username: "Helene", name_of_film: "Capybara", description: "Gem movie", comment: "Dodgy", ratings: "Outstanding" }
+         post :create, review: {username: "Helene", comment: "Dodgy", ratings: "Outstanding" }
          }.to change{ Review.count }.from(0).to(1) 
       end
     describe "with invalid params" do 
        let(:invalid_params) do
-         {review: {name_of_film: "Capybara", description: "Gem movie", comment: "Dodgy"}}
+         {review: {comment: "Dodgy"}}
        end
         it "does not save a record" do
 
