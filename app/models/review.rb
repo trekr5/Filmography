@@ -1,5 +1,7 @@
 class Review < ActiveRecord::Base
 
+	belongs_to :movie
+
   validates :username, presence: true, uniqueness: true, :case_sensitive => false
   validates :name_of_film, presence: true
   validates :comment, presence: true
