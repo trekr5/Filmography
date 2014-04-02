@@ -7,6 +7,20 @@
 
 
 <%= form_for @review do |f| %>
+  <% if @review.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@review.errors.count, "error") %> 
+      prohibited this post from being saved:</h2>
+ 
+    <ul>
+    <% @review.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
   <%= f.label :username %><br />
   <%= f.text_field :username %><br /><br />
   <%= f.label :name_of_film %><br />

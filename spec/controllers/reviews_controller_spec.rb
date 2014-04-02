@@ -8,7 +8,7 @@ describe ReviewsController do
   
 
   it "has a show action" do 
-    @review = Review.create
+    @review = FactoryGirl.create(:review)
     get :show, id: @review.id
     response.should be_ok
   end
