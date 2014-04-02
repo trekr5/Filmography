@@ -7,11 +7,11 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     if @review.valid?
-    @review.save
-    redirect_to @review
-  else
-    render :new
-  end
+      @review.save
+      redirect_to @review
+    else
+      render :new
+    end
   end
 
   def show
