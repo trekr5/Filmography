@@ -22,4 +22,25 @@ describe ReviewsController do
   end
 
   end
+
+  describe "with invalid params" do 
+     let(:invalid_params) do
+       {review: {username: "Helene", name_of_film: "Capybara", description: "Gem movie", comment: "Dodgy", ratings: "Outstanding" }}
+     end
+      it "does not save a record" do
+
+        expect {
+         post :create, invalid_params
+         }.to_not change{ Review.count }
+  end
+      it "renders the new form" do
+          post :create, invalid_params 
+           response.should render_template(:new)
+    
+
+      end  
+
+  end
+
+
 end
