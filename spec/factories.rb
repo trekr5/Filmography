@@ -9,6 +9,11 @@ FactoryGirl.define do
 
   end
 
+  factory :movie do
+  	title "Rspec the movie"
+  	description "Movie about Rspec"
+  	ratings "5"
+  end	
 end
 
 
