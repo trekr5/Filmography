@@ -1,5 +1,25 @@
+<!DOCTYPEhtml>
+<html>
+    <head>
+        
+    <title> Movies </title>    
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+     <link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+    </head>
+     <body>
 
 
+
+         <div class="container">
+           
 <% @movies.each do |movie|     %>
  <h1><%= movie.title %></h1>
+ <h5><%= movie.description %></h5>
 <% end %>
+                  </div>   
+
+
+</body>
+</html>
