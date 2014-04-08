@@ -4,28 +4,30 @@
   #<%= text_field_tag(:q) %>
   #<%= submit_tag("Search") %>
 #<% end %> -->
-
-
-<%= form_for @review do |f| %>
-  <% if @review.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@review.errors.count, "error") %> 
-      prohibited this post from being saved:</h2>
- 
-    <ul>
-    <% @review.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+<div class="row">
+  <div class="col-md-6">
+    <%= form_for @review do |f| %>
+      <% if @review.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@review.errors.count, "error") %> 
+          prohibited this post from being saved:</h2>
+     
+        <ul>
+        <% @review.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     <% end %>
-    </ul>
+      <%= f.label :username %><br />
+      <%= f.text_field :username, :class => 'form-control' %><br /><br />
+        <%= f.label :comment %><br />
+       <%= f.text_area :comment %><br />
+      <%= f.select :ratings, [['Poor', 1],['Not So Poor', 2],['Average', 3],['Good', 4],['Outstanding', 5]] %>
+      <%= f.submit "Create", :class => 'btn' %>
+    <% end %>
   </div>
-<% end %>
+</div>
 
 
-  <%= f.label :username %><br />
-  <%= f.text_field :username %><br /><br />
-    <%= f.label :comment %><br />
-   <%= f.text_area :comment %><br />
-  <%= f.select :ratings, [['Poor', 1],['Not So Poor', 2],['Average', 3],['Good', 4],['Outstanding', 5]] %>
-  <%= f.submit "Create" %>
-<% end %>
 
