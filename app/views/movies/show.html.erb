@@ -1,0 +1,7 @@
+    
+        <h1><%= @movie.title %>
+          <% @movie.ratings.times do %>
+          <%= image_tag('/assets/star.png', :size => "20x20") %>
+          <% end %>
+        </h1>
+    

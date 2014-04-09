@@ -21,4 +21,8 @@
    <%= f.text_area :description %><br />
   <%= f.select :ratings, [['Poor', 1],['Not So Poor', 2],['Average', 3],['Good', 4],['Outstanding', 5]] %>
   <%= f.submit "Create" %>
+
+  <%= form_for @movie, :url => "/movies", :html => {:method => :post} do |f| %>
+
+<% end %>
 <% end %>

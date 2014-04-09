@@ -15,7 +15,7 @@
 <div class="row">
 
       <% @reviews.each do |review|     %>
-        <h1><%= review.username %>
+        <h1><%= review.movie.title %>
           <% review.ratings.times do %>
           <%= image_tag('/assets/star.png', :size => "20x20") %>
           <% end %>
