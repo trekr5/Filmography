@@ -12,22 +12,25 @@
 <body class="movies">
 
 
-<div class="row">
+<div class="container">
+
 
       <% @movies.each do |movie|     %>
-        <h1><%= movie.title %>
+        <h3><%= movie.title %>
           <% movie.ratings.times do %>
           <%= image_tag('/assets/star.png', :size => "20x20") %>
           <% end %>
+
         </h1>
 
         <p><%= movie.description %></p>
-  
-</div>
+        <%= link_to "Crate a review", new_review_path(@review) %>
+
+
     <% end %>
     </div>   
     </div>
-           <%= link_to "Crate a review", new_review_path(@review) %>
+
 </body>
 
 

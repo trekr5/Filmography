@@ -1,9 +1,15 @@
-
+body { 
+padding-top: 60px; 
+text-align: left;
+margin-left: 50px; 
+}
 
 body.homepage{
 background-image:url('http://www.dan-dare.org/FreeFun/Images/TheMatrixWallpaper1024.jpg');
 }
 
-body.movies{
-  text-size: 50px;
+.title {
+  color: white;
 }
+
+
