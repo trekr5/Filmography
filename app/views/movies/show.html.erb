@@ -1,7 +1,12 @@
     
-        <h1><%= @movie.title %>
+        <h1>New movie added</h1><br>
+
+          <h2><%= @movie.title %>
           <% @movie.ratings.times do %>
           <%= image_tag('/assets/star.png', :size => "20x20") %>
           <% end %>
-        </h1>
+        </h2>
+        <p><%= @movie.description %></p>
+
+       <%= link_to "Back to Movies", movies_path %>
     
