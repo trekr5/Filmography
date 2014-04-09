@@ -12,17 +12,15 @@
 <body class="movies">
 
 
-<div class="row">
-
       <% @reviews.each do |review|     %>
-        <h1><%= review.movie.title %>
+        <h1><%= review.movie %>
           <% review.ratings.times do %>
           <%= image_tag('/assets/star.png', :size => "20x20") %>
           <% end %>
         </h1>
 
         <p><%= review.comment %></p>
-  
+
 </div>
     <% end %>
     </div>   

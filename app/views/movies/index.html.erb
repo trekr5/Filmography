@@ -12,22 +12,33 @@
 <body class="movies">
 
 
-<div class="container">
 
+<table class="table table-striped" width="647">
+  <thead>
+    <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Ratings</th>
+    </tr>
+  </thead>
+  <tbody>
+   
+      <% @movies.each do |movie| %>
+       <tr>
+        <td>1</td>
+        <td><%= movie.title %></td>
+        <td><%= movie.description %></td>
+        <td> <% movie.ratings.times do %>
+            <%= image_tag('/assets/star.png', :size => "20x20") %>
+        <% end %></td>
+        </tr>
+      <% end %>
+    
+  </tbody>
+</table>
 
-      <% @movies.each do |movie|     %>
-        <h3><%= movie.title %>
-          <% movie.ratings.times do %>
-          <%= image_tag('/assets/star.png', :size => "20x20") %>
-          <% end %>
-
-        </h1>
-
-        <p><%= movie.description %></p>
-        <%= link_to "Crate a review", new_review_path(@review) %>
-
-
-    <% end %>
+    
     </div>   
     </div>
 
