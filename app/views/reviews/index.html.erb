@@ -1,5 +1,33 @@
+<!DOCTYPEhtml>
+<html>
+    <head>   
+    <title> Movies </title>    
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+     <link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+    </head>
+  
+
+<body class="movies">
 
 
-<% @reviews.each do |review|     %>
- <h1><%= review.movie.title%></h1>
-<% end %>
+<div class="row">
+
+      <% @reviews.each do |review|     %>
+        <h1><%= review.username %>
+          <% review.ratings.times do %>
+          <%= image_tag('/assets/star.png', :size => "20x20") %>
+          <% end %>
+        </h1>
+
+        <p><%= review.comment %></p>
+  
+</div>
+    <% end %>
+    </div>   
+    </div>
+</body>
+
+
+</html>

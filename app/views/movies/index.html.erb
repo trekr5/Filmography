@@ -9,13 +9,21 @@
     </head>
   
 
-  <body>
+<body class="movies">
 
-    <div class="container">
-    <% @movies.each do |movie|     %>
-         <h1>BLAHBLAH</h1>
-         <li><%= movie.title %></li>
-        <h5><%= movie.description %></h5>
+
+<div class="row">
+
+      <% @movies.each do |movie|     %>
+        <h1><%= movie.title %>
+          <% movie.ratings.times do %>
+          <%= image_tag('/assets/star.png', :size => "20x20") %>
+          <% end %>
+        </h1>
+
+        <p><%= movie.description %></p>
+  
+</div>
     <% end %>
     </div>   
     </div>
